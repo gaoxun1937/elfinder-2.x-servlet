@@ -13,17 +13,17 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
 
 import org.grapheco.elfinder.service.FsItemFilter;
 import org.grapheco.elfinder.service.FsService;
 import org.grapheco.elfinder.util.FsItemFilterUtils;
 import org.grapheco.elfinder.util.FsServiceUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractCommandExecutor implements CommandExecutor
 {
-	protected static Logger LOG = Logger
-			.getLogger(AbstractCommandExecutor.class);
+	protected static Logger LOG = LoggerFactory.getLogger(AbstractCommandExecutor.class);
 
 	protected FsItemFilter getRequestedFilter(HttpServletRequest request)
 	{

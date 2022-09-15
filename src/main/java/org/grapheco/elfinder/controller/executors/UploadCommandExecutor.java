@@ -13,7 +13,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.fileupload.FileItemStream;
-import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import org.grapheco.elfinder.controller.MultipleUploadItems;
@@ -22,11 +21,13 @@ import org.grapheco.elfinder.controller.executor.CommandExecutor;
 import org.grapheco.elfinder.controller.executor.FsItemEx;
 import org.grapheco.elfinder.service.FsItemFilter;
 import org.grapheco.elfinder.service.FsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UploadCommandExecutor extends AbstractJsonCommandExecutor
 		implements CommandExecutor
 {
-	Logger _logger = Logger.getLogger(this.getClass());
+	Logger _logger = LoggerFactory.getLogger(this.getClass());
 
 	// large file will be splitted into many parts
 	class Part

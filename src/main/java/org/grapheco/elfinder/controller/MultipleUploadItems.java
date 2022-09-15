@@ -3,7 +3,8 @@ package org.grapheco.elfinder.controller;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
@@ -19,7 +20,7 @@ import java.util.List;
  * @author bluejoe
  */
 public class MultipleUploadItems {
-    Logger _logger = Logger.getLogger(this.getClass());
+    Logger _logger = LoggerFactory.getLogger(this.getClass());
     List<FileItemStream> _items = new ArrayList<FileItemStream>();
     File _tempDir;
 

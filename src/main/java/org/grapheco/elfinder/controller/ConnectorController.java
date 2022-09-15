@@ -8,7 +8,8 @@ import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.util.Streams;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,7 +31,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("connector")
 public class ConnectorController {
-    Logger _logger = Logger.getLogger(this.getClass());
+    Logger _logger = LoggerFactory.getLogger(this.getClass());
     @Resource(name = "commandExecutorFactory")
     private CommandExecutorFactory _commandExecutorFactory;
 
